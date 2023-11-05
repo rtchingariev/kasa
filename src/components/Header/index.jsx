@@ -25,6 +25,12 @@ const StyledLink = styled(Link)`
   font-weight: 500;
   line-height: 34px;
   color: #ff6060;
+  &:hover {
+    color: #000;
+  }
+  &:active {
+    color: #ff0000;
+  }
 `;
 
 function Header() {

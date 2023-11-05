@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home/index';
 import About from './pages/About/about';
 import Header from './components/Header/index';
-import Banner from './components/Banner/index';
 import Card from './components/Card/index';
 import Footer from './components/Footer/index';
 import Error from './components/Error/index';
@@ -23,13 +22,14 @@ root.render(
     <Router>
       <Wrapper>
         <Header />
-        <Banner />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/card/:id" element={<Card />} />
           <Route path="*" element={<Error />} />
         </Routes>
+
         <Footer />
       </Wrapper>
     </Router>

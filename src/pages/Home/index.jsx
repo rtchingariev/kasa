@@ -1,4 +1,6 @@
 import data from '../../data/logements.json';
+import BannerHome from '../../components/Banner/home';
+
 // import { data } from '../../data/data';
 import thumb from '../../assets/images/img.png';
 import { NavLink } from 'react-router-dom';
@@ -24,8 +26,29 @@ const HomeGrid = styled.div`
 `;
 
 const HomeContent = styled.div`
+  background-image: url(${thumb});
+  background-size: cover;
+  width: 340px;
+  height: 340px;
   position: relative;
   margin-bottom: 20px;
+  display: block;
+  z-index: 1;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 340px;
+    border-radius: 10px;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0,
+      #000 100%
+    );
+    opacity: 0.5;
+  }
 `;
 const HomeTitle = styled.div`
   position: absolute;
@@ -39,22 +62,26 @@ const HomeTitle = styled.div`
   font-weight: 500;
   line-height: 26px;
   letter-spacing: 0em;
+  z-index: 2;
 `;
 
 function Home() {
   return (
-    <HomeContainer>
-      <HomeGrid>
-        {data.map((item, i) => (
-          <NavLink to={`/card/${item.id}`}>
-            <HomeContent key={i}>
-              <img src={thumb} className="thumb" alt={item.title} />
-              <HomeTitle>{item.title}</HomeTitle>
-            </HomeContent>
-          </NavLink>
-        ))}
-      </HomeGrid>
-    </HomeContainer>
+    <>
+      <BannerHome />
+      <HomeContainer>
+        <HomeGrid>
+          {data.map((item, i) => (
+            <NavLink to={`/card/${item.id}`}>
+              <HomeContent key={i}>
+                {/* <img src={thumb} className="thumb" alt={item.title} /> */}
+                <HomeTitle>{item.title}</HomeTitle>
+              </HomeContent>
+            </NavLink>
+          ))}
+        </HomeGrid>
+      </HomeContainer>
+    </>
   );
 }
 

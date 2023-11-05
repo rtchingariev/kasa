@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import banner from '../../assets/images/banner.png';
+import banner from '../../assets/images/banner-home.png';
 
 const HeroBanner = styled.div`
   display: flex;
