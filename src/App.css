@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,89 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+  line-height: 1.4;
+  padding: 30px;
+} */
+
+.wrapper {
+  width: 1020px;
+  margin: 0 auto;
+}
+
+.accordion-wrapper {
+  & + * {
+    margin: 30px 0;
+  }
+}
+
+.accordion-item {
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(1, 0, 1, 0);
+  height: auto;
+  max-height: 9999px;
+}
+
+.accordion-item.collapsed {
+  max-height: 0;
+  transition: max-height 0.35s cubic-bezier(0, 1, 0, 1);
+}
+
+.accordion-title {
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 34px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  cursor: pointer;
+  color: #fff;
+  padding: 10px 20px 10px 15px;
+  background: #ff6060;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid currentColor;
+  }
+
+  &:hover,
+  &.open {
+    color: #fff;
+  }
+
+  &.open {
+    &::after {
+      content: '';
+      border-top: 0;
+      border-bottom: 5px solid;
+    }
+  }
+}
+
+.accordion-content {
+  background: #f6f6f6;
+  padding: 1em 1.5em;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  color: #ff6060;
+
+  border-radius: 5px;
 }

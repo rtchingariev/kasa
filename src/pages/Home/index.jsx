@@ -2,7 +2,7 @@ import data from '../../data/logements.json';
 import BannerHome from '../../components/Banner/home';
 
 // import { data } from '../../data/data';
-import thumb from '../../assets/images/img.png';
+// import thumb from '../../assets/images/img.png';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 // console.log(data);
@@ -26,8 +26,6 @@ const HomeGrid = styled.div`
 `;
 
 const HomeContent = styled.div`
-  background-image: url(${thumb});
-  background-size: cover;
   width: 340px;
   height: 340px;
   position: relative;
@@ -74,7 +72,17 @@ function Home() {
           {data.map((item, i) => (
             <NavLink to={`/card/${item.id}`}>
               <HomeContent key={i}>
-                {/* <img src={thumb} className="thumb" alt={item.title} /> */}
+                <img
+                  style={{
+                    display: 'block',
+                    width: '340px',
+                    height: '340px',
+                    borderRadius: '10px',
+                    objectFit: 'cover',
+                  }}
+                  src={item.cover}
+                  alt={item.title}
+                />
                 <HomeTitle>{item.title}</HomeTitle>
               </HomeContent>
             </NavLink>

@@ -15,7 +15,6 @@ const HeaderLogo = styled.img`
 `;
 
 const StyledLink = styled(Link)`
-  text-transform: uppercase;
   text-decoration: none;
   display: inline-block;
   width: 150px;
@@ -26,10 +25,10 @@ const StyledLink = styled(Link)`
   line-height: 34px;
   color: #ff6060;
   &:hover {
-    color: #000;
+    color: #ff6060;
   }
-  &:active {
-    color: #ff0000;
+  &.active {
+    text-decoration: underline;
   }
 `;
 
@@ -39,7 +38,9 @@ function Header() {
       <HeaderLogo src={logo} alt="Kasa - Chez vous, partout et ailleurs" />
 
       <nav>
-        <StyledLink to="/">Accueil</StyledLink>
+        <StyledLink to="/" className="active">
+          Accueil
+        </StyledLink>
         <StyledLink to="/about">A propos</StyledLink>
       </nav>
     </HeaderContainer>
