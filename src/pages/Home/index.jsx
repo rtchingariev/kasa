@@ -15,6 +15,8 @@ const HomeContainer = styled.div`
   padding: 30px 0;
   margin: 30px 0;
   border-radius: 25px;
+  @media (max-width: 375px) {
+  }
 `;
 
 const HomeGrid = styled.div`
@@ -23,6 +25,9 @@ const HomeGrid = styled.div`
   grid-gap: 10px;
   grid-auto-rows: auto;
   justify-items: center;
+  @media (max-width: 375px) {
+    grid-template-columns: none;
+  }
 `;
 
 const HomeContent = styled.div`
@@ -61,6 +66,10 @@ const HomeTitle = styled.div`
   line-height: 26px;
   letter-spacing: 0em;
   z-index: 2;
+  @media (max-width: 375px) {
+    top: 250px;
+    width: 200px;
+  }
 `;
 
 function Home() {

@@ -14,6 +14,9 @@ const Wrapper = styled.div`
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 30px;
+  @media (max-width: 375px) {
+    padding: 0 10px;
+  }
 `;
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -12,6 +12,13 @@ const HeroBanner = styled.div`
   border-radius: 25px;
   padding: 30px 0;
   margin: 30px 0;
+  @media (max-width: 375px) {
+    height: 110px;
+    border-radius: 10px;
+    justify-content: left;
+    padding: 0 15px;
+    margin: 20px 0;
+  }
 `;
 
 const HeroSlogan = styled.div`
@@ -22,6 +29,11 @@ const HeroSlogan = styled.div`
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   color: #fff;
+  @media (max-width: 375px) {
+    width: 217px;
+    height: 48px;
+    font-size: 24px;
+  }
 `;
 
 function Banner() {

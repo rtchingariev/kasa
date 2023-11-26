@@ -7,7 +7,7 @@ const FooterContainer = styled.div`
   align-items: center;
   width: auto;
   height: 200px;
-  padding: 30px;
+  padding: 30px 0;
   margin: 0;
   background: #000;
   color: #fff;
@@ -22,6 +22,12 @@ const FooterCopyright = styled.span`
   font-size: 24px;
   font-weight: 500;
   line-height: 34px;
+  @media (max-width: 375px) {
+    width: 135px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 18px;
+  }
 `;
 
 function Footer() {

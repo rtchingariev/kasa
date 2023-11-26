@@ -121,3 +121,9 @@ body {
 
   border-radius: 5px;
 }
+
+@media (max-width: 375px) {
+  .accordion-title {
+    font-size: 13px;
+  }
+}
